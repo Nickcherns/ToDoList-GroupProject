@@ -1,13 +1,30 @@
 * {
-    padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    padding: 0;
+}
+
+html {
+    background-image: 
+    /* top, transparent red */
+    linear-gradient( 
+        rgba(163, 186, 221, 0.8),
+        rgba(112, 133, 213, 0.8)
+    ),
+    /* your image */
+    url(https://images.unsplash.com/photo-1672426809219-56a751528f8a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=694&q=80);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+body {
+    background-position: center;
+    max-height: 100%;
 }
 
 #main {
     align-items: center;
-    background-color: rgb(178, 163, 221);
-    height: 1070px;
     padding: 50px;
 }
 
@@ -17,11 +34,25 @@
     font-size: 50px;
 }
 
-#main li {
-    font-size: 35px;
-    border-bottom: 1px dashed black;
-    border-left: 1px dashed black;
+#mainList {
+    display: flex;
+    justify-content: center;
+}
+#list {
+    min-width: 300px;
+    max-width: 500px;
+}
+
+#list li {
+    cursor: pointer;
+    text-align: center;
+    font-size: 32px;
+    border-bottom: 2px dashed black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-radius: 8px;
     list-style: none;
+    background-color: rgb(188, 213, 251);
 }
 
 #input {
@@ -29,46 +60,51 @@
     font-size: 24px;
     border-radius: 7px;
     padding-left: 10px;
+    background-color: rgb(224, 216, 245);
     
 }
 
 #input:hover {
-    border: 2px solid lightblue;
+    border: 3px solid rgb(42, 65, 72);
 }
 
 #button {
-    padding: 3px 6px;
-    margin-left: 7px;
+    display: flex;
+    align-items: center;
+    padding-left: 7px;
+    padding-right: 7px;
+    margin-left: 15px;
     font-size: 28px;
-    border-radius: 7px;
-    background-color: lightslategrey;
+    border-radius: 10px;
+    background-color: rgb(152, 199, 215);
     color: black;
-    border: 2px solid black;
+    border: 2px solid grey;
 }
 
 #button:hover {
-    background-color: lightblue;
+    background-color: rgb(169, 187, 202);
     color: black;
-    border: 2px solid black;
+    border: 2px solid white;
+    border-style: outset;
 }
 
-ul li:hover {
-    background: #ddd;
+#list li:hover {
+    background-color: rgb(175, 198, 219);
   }
 
-  ul li .content {
-    padding-left: 2.3em;
+ul li .content {
+    cursor: pointer;
   }
 
 ul li.checked {
-    background: #888;
+    background: rgb(144, 187, 156) !important; 
     color: #fff;
-    transition: 0.5s;
+    transition: 0.5s;;
   }
 
 ul li.checked .content {
+    position: relative;
     text-decoration: line-through;
-    padding-left: 1.1em;
 }
 
 ul li.checked .checkmark {
@@ -90,16 +126,67 @@ ul li .checkmark {
 
 .close:hover {
     background-color: #f44336;
+    border-radius: 8px;
     color: white;
   }
 
 #submission {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 40px;
+    margin-left: 280px;
+    margin-right: 280px;
+    padding: 10px;
+    border-style: ridge;
+    border-radius: 10px;
+    background-color: rgb(188, 213, 251);
+}
+
+#actions {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-self: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 3px dashed rgb(85, 85, 85);
+    border-radius: 10px;
+    min-width: 300px;
 }
 
 #actions li{
-    padding-left: 50px;
+    padding: 2px;
+    list-style: none;
+    background-color: rgb(188, 213, 251);
+}
+
+#actions li:nth-child(odd) {
+    background-color: rgb(166, 189, 224);
+}
+
+#actionList h2 {
+    margin-bottom: -8px;
+    margin-top: 200px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: rgb(188, 213, 251);
+    border-top: 2px solid ;
+    border-left: 2px solid ;
+    border-right: 2px solid ;
+    border-radius: 10px;
+    z-index: 1;
+    
+}
+
+#actionList ul {
+    
+    background-color: rgb(188, 213, 251);
+}
+
+#actionList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 

@@ -16,6 +16,8 @@ function addList() {
     checkmark.textContent = '\u2713';
     checkmark.className = 'checkmark';
 
+    newLi.className = 'added'
+
     listArray.push(input);
     let content = document.createElement('span');
     content.textContent = listArray.slice(-1);
@@ -27,45 +29,41 @@ function addList() {
     ul.appendChild(newLi);
 
     //adding last added entry to listEvent
-    listEvent.textContent = listArray.slice(-1);
-    actions.append('"' + listEvent.textContent + '"' + ' was added to the list');
-
-    //Checks if input field is empty when button clicked
-    if (input === '') {
-      alert("You must write something!");
-    } else {
-      document.getElementById("list").appendChild(newLi);
-    }
+    listEvent.textContent = '"' + listArray.slice(-1) + '"' + ' was added to the list';
+    actions.append(listEvent);
 
     //clear input field
     document.getElementById("input").value = "";
-  
+
     for (let i = 0; i < close.length; i++) {
       close[i].onclick = function() {
         let div = this.parentElement;
+        let deleteAction = document.createElement('li');
         div.style.display = "none";
-      }
+        deleteAction.textContent = '"' + this.previousSibling.innerHTML + '"' + ' was removed from the list';
+        actions.append(deleteAction);
+      } 
     }
 
-    //  close
-    //    listEvent.textContent = listArray.slice(-1);
-    //    let description = `${listEvent} was REMOVED to the list`;
-    //    actions.append(description);
-    //  }
-    //}
-  }
+    //Checks if input field is empty when button clicked
+    if (input === '') {
+    alert("You must write something!");
+    } else {
+      document.getElementById("list").append(newLi);
+    }
+
+
+}
+
 
 
 
 // Click on a close button to hide the current list item
 let close = document.getElementsByClassName("close");
-let removedAction = document.createElement('li');
 for (let i = 0; i < close.length; i++) {
   close[i].onclick = function() {
     let div = this.parentElement;
-    div.style.display = "none";
-    deleteAction = this.previousSibling;
-    actions.append('"' + deleteAction + '"' + ' was removed from the list'); 
+    div.style.display = "none";   
   }
 }
 
