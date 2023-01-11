@@ -1,21 +1,21 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Quicksand', sans-serif;
 }
 
 html {
     background-image: 
-    /* top, transparent red */
-    linear-gradient( 
-        rgba(163, 186, 221, 0.8),
-        rgba(112, 133, 213, 0.8)
-    ),
-    /* your image */
-    url(https://images.unsplash.com/photo-1672426809219-56a751528f8a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=694&q=80);
+        linear-gradient( 
+            rgba(163, 186, 221, 0.5),
+            rgba(112, 133, 213, 0.5)
+        ),
+        url(https://images.unsplash.com/photo-1672426809219-56a751528f8a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=694&q=80);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100%;
+    background-attachment: fixed;
+    min-height: 100%;
 }
 
 body {
@@ -24,23 +24,33 @@ body {
 }
 
 #main {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     padding: 50px;
+    margin-top: 100px;
 }
 
 #main h1 {
     text-align: center;
-    padding-bottom: 20px;
-    font-size: 50px;
+    margin-bottom: 70px;
+    font-size: 60px;
+    padding: 5px 20px 5px 20px;
+    border-style: ridge;
+    border-radius: 10px;
+    background-color: rgb(188, 213, 251);
+    border-color: rgb(183, 183, 183);
 }
 
 #mainList {
-    display: flex;
+    display: none;
     justify-content: center;
+    border-radius: 6px;
+    box-shadow: 12px 12px 2px 1px rgba(69, 79, 95, 0.5);
 }
 #list {
-    min-width: 300px;
-    max-width: 500px;
+    min-width: 500px;
+    border-radius: 6px;
 }
 
 #list li {
@@ -50,7 +60,7 @@ body {
     border-bottom: 2px dashed black;
     border-left: 1px solid black;
     border-right: 1px solid black;
-    border-radius: 8px;
+    border-radius: 6px;
     list-style: none;
     background-color: rgb(188, 213, 251);
 }
@@ -59,7 +69,8 @@ body {
     height: 2em;
     font-size: 24px;
     border-radius: 7px;
-    padding-left: 10px;
+    padding-left: 15px;
+    padding-right: 60px;
     background-color: rgb(224, 216, 245);
     
 }
@@ -76,16 +87,15 @@ body {
     margin-left: 15px;
     font-size: 28px;
     border-radius: 10px;
-    background-color: rgb(152, 199, 215);
+    background-color: rgb(162, 213, 230);
     color: black;
     border: 2px solid grey;
 }
 
 #button:hover {
-    background-color: rgb(169, 187, 202);
+    background-color: rgb(172, 221, 237);
     color: black;
-    border: 2px solid white;
-    border-style: outset;
+    border: 2px solid black;
 }
 
 #list li:hover {
@@ -103,7 +113,7 @@ ul li.checked {
   }
 
 ul li.checked .content {
-    position: relative;
+    padding-right: 40px;
     text-decoration: line-through;
 }
 
@@ -126,20 +136,24 @@ ul li .checkmark {
 
 .close:hover {
     background-color: #f44336;
-    border-radius: 8px;
+    border-radius: 6px;
     color: white;
   }
 
 #submission {
     display: flex;
+    align-content: center;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 80px;
     margin-left: 280px;
     margin-right: 280px;
     padding: 10px;
     border-style: ridge;
     border-radius: 10px;
+    border-color: rgb(183, 183, 183);
     background-color: rgb(188, 213, 251);
+    width: 580px;
+    box-shadow: 12px 12px 2px 1px rgba(69, 79, 95, 0.5);
 }
 
 #actions {
@@ -152,12 +166,19 @@ ul li .checkmark {
     border: 3px dashed rgb(85, 85, 85);
     border-radius: 10px;
     min-width: 300px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    
+    box-shadow: 12px 12px 2px 1px rgba(69, 79, 95, 0.5);
 }
 
 #actions li{
-    padding: 2px;
+    padding: 3px;
     list-style: none;
     background-color: rgb(188, 213, 251);
+    font-size: 1.4em;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 #actions li:nth-child(odd) {
@@ -166,15 +187,16 @@ ul li .checkmark {
 
 #actionList h2 {
     margin-bottom: -8px;
-    margin-top: 200px;
-    padding-left: 5px;
-    padding-right: 5px;
+    margin-top: 150px;
+    padding-left: 20px;
+    padding-right: 20px;
     background-color: rgb(188, 213, 251);
     border-top: 2px solid ;
     border-left: 2px solid ;
     border-right: 2px solid ;
     border-radius: 10px;
     z-index: 1;
+    font-size: 1.9em;
     
 }
 
@@ -184,7 +206,7 @@ ul li .checkmark {
 }
 
 #actionList {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;

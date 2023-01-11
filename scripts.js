@@ -5,10 +5,15 @@ function addList() {
     let newLi = document.createElement('li');
     let checkmark = document.createElement('span');
     let removBtn = document.createElement("span");
+    let mainList = document.getElementById('mainList')
+    
+    mainList.style.display = "flex";
 
     //action list variables
     let listEvent = document.createElement('li');
     let actions = document.getElementById('actions');
+    let actionList = document.getElementById('actionList');
+    actionList.style.display = 'flex';
   
     removBtn.className = "close";
     removBtn.textContent = "\u00D7";
@@ -29,7 +34,7 @@ function addList() {
     ul.appendChild(newLi);
 
     //adding last added entry to listEvent
-    listEvent.textContent = '"' + listArray.slice(-1) + '"' + ' was added to the list';
+    listEvent.textContent = '"' + listArray.slice(-1) + '"' + ' was added to your To Do List';
     actions.append(listEvent);
 
     //clear input field
@@ -40,7 +45,7 @@ function addList() {
         let div = this.parentElement;
         let deleteAction = document.createElement('li');
         div.style.display = "none";
-        deleteAction.textContent = '"' + this.previousSibling.innerHTML + '"' + ' was removed from the list';
+        deleteAction.textContent = '"' + this.previousSibling.innerHTML + '"' + ' was removed from your To Do List';
         actions.append(deleteAction);
       } 
     }
